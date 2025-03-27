@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Data Analyzer</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Market Data Analyzer</h1>
+        
+        <div class="input-section">
+            <div class="file-input">
+                <input type="file" id="csvFile" accept=".csv">
+                <div id="loading" class="loading-indicator hidden">Loading...</div>
+            </div>
+
+            <div class="time-controls">
+                <div class="time-scale-buttons">
+                    <button data-period="1D">1D</button>
+                    <button data-period="1W">1W</button>
+                    <button data-period="1M">1M</button>
+                    <button data-period="3M">3M</button>
+                    <button data-period="6M">6M</button>
+                    <button data-period="1Y">1Y</button>
+                    <button data-period="ALL">All</button>
+                </div>
+                <div class="date-range">
+                    <label>Start Date: <input type="date" id="startDate"></label>
+                    <label>End Date: <input type="date" id="endDate"></label>
+                </div>
+                <button id="analyzeBtn">Analyze Data</button>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div id="dotPlot" class="chart"></div>
+            <div id="histogram" class="chart"></div>
+        </div>
+
+        <div class="statistics-section">
+            <h2>Statistical Report</h2>
+            <div id="statsReport"></div>
+        </div>
+    </div>
+    <script src="script/pyscript.js"></script>
+</body>
+</html>
